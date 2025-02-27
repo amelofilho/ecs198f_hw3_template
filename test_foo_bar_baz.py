@@ -1,13 +1,13 @@
 import pytest
 
-from foo_bar_baz import foo_bar_baz
-
 def test_base_cases():
+    from foo_bar_baz import foo_bar_baz
     assert foo_bar_baz(1) == "1"
     assert foo_bar_baz(2) == "1 2"
 
 # **Multiples of 3**
 def test_multiples_of_3():
+    from foo_bar_baz import foo_bar_baz
     assert foo_bar_baz(3) == "1 2 Foo"
     assert foo_bar_baz(6) == "1 2 Foo 4 Bar Foo"
     assert foo_bar_baz(9) == "1 2 Foo 4 Bar Foo 7 8 Foo"
@@ -16,6 +16,7 @@ def test_multiples_of_3():
 
 # **Multiples of 5**
 def test_multiples_of_5():
+    from foo_bar_baz import foo_bar_baz
     assert foo_bar_baz(5) == "1 2 Foo 4 Bar"
     assert foo_bar_baz(10) == "1 2 Foo 4 Bar Foo 7 8 Foo Bar"
     assert foo_bar_baz(20) == "1 2 Foo 4 Bar Foo 7 8 Foo Bar 11 Foo 13 14 Baz 16 17 Foo 19 Bar"
@@ -24,6 +25,7 @@ def test_multiples_of_5():
 
 # **Multiples of Both 3 and 5**
 def test_multiples_of_3_and_5():
+    from foo_bar_baz import foo_bar_baz
     assert foo_bar_baz(15) == "1 2 Foo 4 Bar Foo 7 8 Foo Bar 11 Foo 13 14 Baz"
     assert foo_bar_baz(30) == "1 2 Foo 4 Bar Foo 7 8 Foo Bar 11 Foo 13 14 Baz 16 17 Foo 19 Bar Foo 22 23 Foo Bar 26 Foo 28 29 Baz"
     assert foo_bar_baz(45) == "1 2 Foo 4 Bar Foo 7 8 Foo Bar 11 Foo 13 14 Baz 16 17 Foo 19 Bar Foo 22 23 Foo Bar 26 Foo 28 29 Baz 31 32 Foo 34 Bar Foo 37 38 Foo Bar 41 Foo 43 44 Baz"
@@ -32,16 +34,19 @@ def test_multiples_of_3_and_5():
 
 # **Edge Cases**
 def test_edge_cases():
+    from foo_bar_baz import foo_bar_baz
     assert foo_bar_baz(0) == ""  # Assuming empty string is the expected behavior
     assert foo_bar_baz(-5) == ""  # Assuming negative numbers return empty string
 
 # **Large n to test performance**
 def test_large_n():
+    from foo_bar_baz import foo_bar_baz
     result = foo_bar_baz(1000)  # Performance and correctness
     assert len(result.split()) == 1000  # Ensuring 1000 elements in the output
 
 # **Invalid Inputs**
 def test_invalid_inputs():
+    from foo_bar_baz import foo_bar_baz
     with pytest.raises(TypeError):
         foo_bar_baz("10")
     with pytest.raises(TypeError):
